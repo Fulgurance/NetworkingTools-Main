@@ -36,7 +36,7 @@ class Target < ISM::Software
         CONFIG_WPS=y
         CFLAGS += -I/usr/include/libnl3
         CODE
-        fileWriteData("#{buildDirectoryPath}wpa_supplicant/.config",configData)
+        fileWriteData("#{buildDirectoryPath}.config",configData)
     end
 
     def build
