@@ -53,8 +53,8 @@ class Target < ISM::Software
         makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/man/man8")
 
         moveFile("#{buildDirectoryPath(false)}/wpa_cli","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin/wpa_cli")
-        moveFile("#{buildDirectoryPath(false)}/wpa_passphrase","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin/wpa_cli")
-        moveFile("#{buildDirectoryPath(false)}/wpa_supplicant","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin/wpa_cli")
+        moveFile("#{buildDirectoryPath(false)}/wpa_passphrase","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin/wpa_passphrase")
+        moveFile("#{buildDirectoryPath(false)}/wpa_supplicant","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin/wpa_supplicant")
         moveFile("#{buildDirectoryPath(false)}/doc/docbook/wpa_supplicant.conf.5","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/man/man5/wpa_supplicant.conf.5")
         moveFile("#{buildDirectoryPath(false)}/doc/docbook/wpa_cli.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/man/man8/wpa_cli.8")
         moveFile("#{buildDirectoryPath(false)}/doc/docbook/wpa_passphrase.8","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/man/man8/wpa_passphrase.8")
