@@ -1,0 +1,85 @@
+{
+  "port": "NetworkingTools-Main",
+  "name": "Wpa-Supplicant",
+  "version": "2.9.0",
+  "architectures": ["x86_64"],
+  "description": "WPA Supplicant with support for WPA and WPA2 (IEEE 802.11i / RSN)",
+  "website": "https://w1.fi",
+  "downloadLinks": ["https://w1.fi/releases/wpa_supplicant-2.9.tar.gz"],
+  "md5sums": ["2d2958c782576dc9901092fbfecb4190"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [],
+  "options": [
+    {
+      "name": "Desktop-File-Utils",
+      "description": "Enable desktop-file-utils support to run update-desktop-database",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Desktop-File-Utils",
+          "version": "0.26.0",
+          "options": []
+        }
+      ],
+      "downloadLinks": [],
+      "md5sums": []
+    },
+    {
+      "name": "Libnl",
+      "description": "Enable libnl support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Libnl",
+          "version": "3.5.0",
+          "options": []
+        }
+      ],
+      "downloadLinks": [],
+      "md5sums": []
+    },
+    {
+      "name": "Dbus",
+      "description": "Enable dbus support (required for NetworkManager)",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Encoding",
+          "version": "1.12.20",
+          "options": []
+        }
+      ],
+      "downloadLinks": [],
+      "md5sums": []
+    },
+    {
+      "name": "Libxml2",
+      "description": "Enable libxml2 support (required for NetworkManager)",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Libxml2",
+          "version": "2.9.12",
+          "options": []
+        }
+      ],
+      "downloadLinks": [],
+      "md5sums": []
+    },
+    {
+      "name": "Qt",
+      "description": "Enable Qt support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Qt",
+          "version": "5.15.2",
+          "options": []
+        }
+      ],
+      "downloadLinks": [],
+      "md5sums": []
+    }
+  ]
+}
