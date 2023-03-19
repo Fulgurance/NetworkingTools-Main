@@ -1,7 +1,8 @@
 class Target < ISM::Software
 
     def prepare
-        @buildDirectoryPath = "wpa_supplicant"
+        @buildDirectory = true
+        @buildDirectoryName = "wpa_supplicant"
         super
     end
 
