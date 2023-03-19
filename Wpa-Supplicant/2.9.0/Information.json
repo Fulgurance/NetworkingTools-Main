@@ -18,6 +18,20 @@
   ],
   "options": [
     {
+      "name": "Openrc",
+      "description": "Enable openrc support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Openrc",
+          "version": "0.46.0",
+          "options": []
+        }
+      ],
+      "downloadLinks": ["https://gitweb.gentoo.org/repo/gentoo.git/plain/net-wireless/wpa_supplicant/files/wpa_supplicant-init.d"],
+      "md5sums": ["81e607b82ff5965f9ea6c004ea7287c2"]
+    },
+    {
       "name": "Desktop-File-Utils",
       "description": "Enable desktop-file-utils support to run update-desktop-database",
       "active": false,

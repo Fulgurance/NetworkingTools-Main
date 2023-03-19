@@ -10,5 +10,20 @@
   "patchesLinks": [],
   "installedFiles": [],
   "dependencies": [],
-  "options": []
+  "options": [
+    {
+      "name": "Openrc",
+      "description": "Enable openrc support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Openrc",
+          "version": "0.46.0",
+          "options": []
+        }
+      ],
+      "downloadLinks": ["https://gitweb.gentoo.org/repo/gentoo.git/plain/net-misc/dhcpcd/files/dhcpcd.initd-r1"],
+      "md5sums": ["0cb9c361d30c7526e2266d048bb5ce39"]
+    }
+  ]
 }

@@ -67,6 +67,12 @@ class Target < ISM::Software
             moveFile("#{buildDirectoryPath(false)}/dbus/fi.w1.wpa_supplicant1.service","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service")
             moveFile("#{buildDirectoryPath(false)}/dbus/dbus-wpa_supplicant.conf","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/dbus-1/system.d/wpa_supplicant.conf")
         end
+
+        if option("Openrc")
+            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d")
+            moveFile("#{workDirectoryPath(false)}wpa_supplicant-init.d","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d/wpa_supplicant")
+            runChmodCommand(["+x","wpa_supplicant"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d")
+        end
     end
 
     def install
