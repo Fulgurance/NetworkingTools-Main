@@ -70,7 +70,7 @@ class Target < ISM::Software
 
         if option("Openrc")
             makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d")
-            moveFile("#{workDirectoryPath(false)}wpa_supplicant-init.d","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d/wpa_supplicant")
+            moveFile("#{workDirectoryPath(false)}/wpa_supplicant-init.d","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d/wpa_supplicant")
             runChmodCommand(["+x","wpa_supplicant"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d")
         end
     end

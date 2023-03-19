@@ -26,7 +26,7 @@ class Target < ISM::Software
 
         if option("Openrc")
             makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d")
-            moveFile("#{workDirectoryPath(false)}dhcpcd.initd-r1","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d/dhcpcd")
+            moveFile("#{workDirectoryPath(false)}/dhcpcd.initd-r1","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d/dhcpcd")
             runChmodCommand(["+x","dhcpcd"],"#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/init.d")
         end
     end
