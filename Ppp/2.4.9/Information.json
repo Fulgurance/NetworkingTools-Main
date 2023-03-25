@@ -1,0 +1,14 @@
+{
+  "port": "NetworkingTools-Main",
+  "name": "Ppp",
+  "version": "2.4.9",
+  "architectures": ["x86_64"],
+  "description": "PPP daemon and associated utilities",
+  "website": "https://github.com/ppp-project/ppp",
+  "downloadLinks": ["https://www.samba.org/ftp/ppp/ppp-2.4.9.tar.gz"],
+  "md5sums": ["c88153ae3d16ae114152cd3c15c7301d"],
+  "patchesLinks": [],
+  "installedFiles": [],
+  "dependencies": [],
+  "options": []
+}
