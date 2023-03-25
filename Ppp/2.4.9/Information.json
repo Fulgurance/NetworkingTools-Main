@@ -9,6 +9,12 @@
   "md5sums": ["c88153ae3d16ae114152cd3c15c7301d"],
   "patchesLinks": [],
   "installedFiles": [],
-  "dependencies": [],
+  "dependencies": [
+    {
+      "name": "Libpcap",
+      "version": "1.10.1",
+      "options": []
+    }
+  ],
   "options": []
 }
