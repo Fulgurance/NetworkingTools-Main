@@ -11,8 +11,28 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "Gzip",
-      "version": "1.10.0",
+      "name": "SystemBase",
+      "version": "0.2.0",
+      "options": []
+    },
+    {
+      "name": "Flex",
+      "version": "2.6.4",
+      "options": []
+    },
+    {
+      "name": "Libcap",
+      "version": "2.53.0",
+      "options": []
+    },
+    {
+      "name": "Libelf",
+      "version": "0.185.0",
+      "options": []
+    },
+    {
+      "name": "Zlib",
+      "version": "1.2.11",
       "options": []
     }
   ],
