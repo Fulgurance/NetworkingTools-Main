@@ -9,7 +9,13 @@
   "md5sums": ["c36715fc629bc40aa94aae06fa1724c2"],
   "patchesLinks": [],
   "installedFiles": [],
-  "dependencies": [],
+  "dependencies": [
+    {
+      "name": "SystemBase",
+      "version": "0.2.0",
+      "options": []
+    }
+  ],
   "options": [
     {
       "name": "Openrc",
