@@ -1,5 +1,11 @@
 class Target < ISM::Software
 
+    def extract
+        super
+
+        moveFile("#{workDirectoryPath(false)}/dhcpcd-9.4.0","#{workDirectoryPath(false)}/v9.4.0")
+    end
+
     def configure
         super
 
