@@ -5,8 +5,8 @@
   "architectures": ["x86_64"],
   "description": "DHCP / IPv4LL / IPv6RA / DHCPv6 client",
   "website": "https://github.com/NetworkConfiguration/dhcpcd/",
-  "downloadLinks": ["https://roy.marples.name/downloads/dhcpcd/dhcpcd-9.4.0.tar.xz"],
-  "md5sums": ["c36715fc629bc40aa94aae06fa1724c2"],
+  "downloadLinks": ["https://github.com/NetworkConfiguration/dhcpcd/archive/refs/tags/v9.4.0.tar.gz"],
+  "md5sums": ["59aba4ff7b3a628a5b7cda7ceda33893"],
   "patchesLinks": [],
   "installedFiles": [],
   "dependencies": [
