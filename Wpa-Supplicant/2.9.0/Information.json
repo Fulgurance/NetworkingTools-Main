@@ -51,7 +51,7 @@
       "active": false,
       "dependencies": [
         {
-          "name": "Encoding",
+          "name": "Dbus",
           "version": "1.12.20",
           "options": []
         }
