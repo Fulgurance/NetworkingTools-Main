@@ -5,9 +5,6 @@
   "architectures": ["x86_64"],
   "description": "WPA Supplicant with support for WPA and WPA2 (IEEE 802.11i / RSN)",
   "website": "https://w1.fi",
-  "downloadLinks": ["https://w1.fi/releases/wpa_supplicant-2.9.tar.gz"],
-  "md5sums": ["2d2958c782576dc9901092fbfecb4190"],
-  "patchesLinks": [],
   "installedFiles": [],
   "dependencies": [
     {
@@ -28,8 +25,6 @@
           "options": []
         }
       ],
-      "downloadLinks": ["https://gitweb.gentoo.org/repo/gentoo.git/plain/net-wireless/wpa_supplicant/files/wpa_supplicant-init.d"],
-      "md5sums": ["81e607b82ff5965f9ea6c004ea7287c2"]
     },
     {
       "name": "Desktop-File-Utils",
@@ -42,8 +37,6 @@
           "options": []
         }
       ],
-      "downloadLinks": [],
-      "md5sums": []
     },
     {
       "name": "Dbus",
@@ -56,8 +49,6 @@
           "options": []
         }
       ],
-      "downloadLinks": [],
-      "md5sums": []
     },
     {
       "name": "Libxml2",
@@ -70,8 +61,6 @@
           "options": []
         }
       ],
-      "downloadLinks": [],
-      "md5sums": []
     },
     {
       "name": "Qt",
@@ -84,8 +73,6 @@
           "options": []
         }
       ],
-      "downloadLinks": [],
-      "md5sums": []
     }
   ]
 }
