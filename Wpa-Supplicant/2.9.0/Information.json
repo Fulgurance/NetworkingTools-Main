@@ -24,7 +24,7 @@
           "version": "0.46.0",
           "options": []
         }
-      ],
+      ]
     },
     {
       "name": "Desktop-File-Utils",
@@ -36,7 +36,7 @@
           "version": "0.26.0",
           "options": []
         }
-      ],
+      ]
     },
     {
       "name": "Dbus",
@@ -48,7 +48,7 @@
           "version": "1.12.20",
           "options": []
         }
-      ],
+      ]
     },
     {
       "name": "Libxml2",
@@ -60,7 +60,7 @@
           "version": "2.9.12",
           "options": []
         }
-      ],
+      ]
     },
     {
       "name": "Qt",
@@ -72,7 +72,7 @@
           "version": "5.15.2",
           "options": []
         }
-      ],
+      ]
     }
   ]
 }
