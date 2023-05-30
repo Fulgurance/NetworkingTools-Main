@@ -69,7 +69,7 @@ class Target < ISM::Software
         end
 
         if option("Openrc")
-            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/wpa_supplicant-init.d","wpa_supplicant")
+            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/Wpa_Supplicant-Init.d","wpa_supplicant")
         end
     end
 
