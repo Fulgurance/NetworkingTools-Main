@@ -25,7 +25,7 @@ class Target < ISM::Software
         makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}var/lib/dhcpcd")
 
         if option("Openrc")
-            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/dhcpcd.initd-r1","dhcpcd")
+            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/Dhcpcd-Init.d","dhcpcd")
         end
     end
 
