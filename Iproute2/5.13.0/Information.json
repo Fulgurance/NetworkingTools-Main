@@ -1,6 +1,6 @@
 {
   "port": "NetworkingTools-Main",
-  "name": "IPRoute2",
+  "name": "Iproute2",
   "version": "5.13.0",
   "architectures": ["x86_64"],
   "description": "Collection of utilities for controlling TCP / IP networking and traffic control in Linux",
