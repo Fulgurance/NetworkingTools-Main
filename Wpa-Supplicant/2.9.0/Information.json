@@ -13,7 +13,7 @@
       "options": []
     }
   ],
-  "kernelDependencies": [],
+  "kernelDependencies": ["CONFIG_NET","CONFIG_WIRELESS","CONFIG_CFG80211","CONFIG_CFG80211_WEXT","CONFIG_MAC80211","CONFIG_NETDEVICES","CONFIG_WLAN"],
   "options": [
     {
       "name": "Openrc",
