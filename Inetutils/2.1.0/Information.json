@@ -2,7 +2,9 @@
   "port": "NetworkingTools-Main",
   "name": "Inetutils",
   "version": "2.1.0",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "Collection of common network programs",
   "website": "https://www.gnu.org/software/inetutils/",
   "installedFiles": [],

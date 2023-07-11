@@ -2,7 +2,9 @@
   "port": "NetworkingTools-Main",
   "name": "Ppp",
   "version": "2.4.9",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "PPP daemon and associated utilities",
   "website": "https://github.com/ppp-project/ppp",
   "installedFiles": [],

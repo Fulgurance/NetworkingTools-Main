@@ -2,7 +2,9 @@
   "port": "NetworkingTools-Main",
   "name": "Dhcpcd",
   "version": "9.4.0",
-  "architectures": ["x86_64"],
+  "architectures": [
+    "x86_64"
+  ],
   "description": "DHCP / IPv4LL / IPv6RA / DHCPv6 client",
   "website": "https://github.com/NetworkConfiguration/dhcpcd/",
   "installedFiles": [],
@@ -25,7 +27,8 @@
           "version": "0.46.0",
           "options": []
         }
-      ]
+      ],
+      "kernelDependencies": []
     }
   ]
 }
