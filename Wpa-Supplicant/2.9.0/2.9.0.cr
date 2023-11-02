@@ -42,7 +42,7 @@ class Target < ISM::Software
     def build
         super
 
-        makeSource([Ism.settings.makeOptions,"BINDIR=/usr/sbin","LIBDIR=/usr/lib"],buildDirectoryPath)
+        makeSource(["BINDIR=/usr/sbin","LIBDIR=/usr/lib"],buildDirectoryPath)
     end
 
     def prepareInstallation
