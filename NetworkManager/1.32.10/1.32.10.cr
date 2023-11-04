@@ -39,6 +39,10 @@ class Target < ISM::Software
 
         moveFile("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/doc/NetworkManager","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/doc/NetworkManager-1.32.10")
 
+        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/")
+
+        moveFile("#{mainWorkDirectoryPath(false)}/10-openrc-status","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status")
+
         if option("Openrc")
             prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/NetworkManager-Init.d","networkmanager")
         end
