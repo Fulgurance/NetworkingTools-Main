@@ -190,6 +190,32 @@
         }
       ],
       "kernelDependencies": []
+    },
+    {
+      "name": "ModemManager",
+      "description": "Enable modemmanager support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "ModemManager",
+          "version": "1.16.10",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Ppp",
+      "description": "Enable ppp support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Ppp",
+          "version": "2.4.9",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
     }
   ],
   "uniqueOptions": []
