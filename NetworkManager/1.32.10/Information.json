@@ -55,7 +55,7 @@
       "dependencies": [
         {
           "name": "Dhcp",
-          "version": "4.4.2-p1",
+          "version": "4.4.2+p1",
           "options": []
         }
       ],
