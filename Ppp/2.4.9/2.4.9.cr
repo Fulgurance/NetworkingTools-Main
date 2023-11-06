@@ -3,7 +3,9 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(path: buildDirectoryPath)
+        configureSource([   "--prefix=/usr",
+                            "--sysconfdir=/etc"],
+                            buildDirectoryPath)
     end
 
     def build
