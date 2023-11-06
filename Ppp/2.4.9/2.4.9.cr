@@ -3,8 +3,8 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource([   "--prefix=/usr",
-                            "--sysconfdir=/etc"],
+        configureSource([   "--prefix=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr",
+                            "--sysconfdir=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc"],
                             buildDirectoryPath)
     end
 
@@ -17,7 +17,7 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource(["install"],buildDirectoryPath)
     end
 
 end
