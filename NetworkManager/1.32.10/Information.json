@@ -114,6 +114,19 @@
       "kernelDependencies": []
     },
     {
+      "name": "Gnutls",
+      "description": "Enable gnutls support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Gnutls",
+          "version": "3.7.2",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
       "name": "Polkit",
       "description": "Enable polkit support",
       "active": false,
