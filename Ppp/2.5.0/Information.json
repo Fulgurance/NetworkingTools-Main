@@ -1,0 +1,21 @@
+{
+  "port": "NetworkingTools-Main",
+  "name": "Ppp",
+  "version": "2.5.0",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "PPP daemon and associated utilities",
+  "website": "https://github.com/ppp-project/ppp",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Libpcap",
+      "version": "2.69.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueOptions": []
+}

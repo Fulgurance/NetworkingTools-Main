@@ -1,0 +1,41 @@
+{
+  "port": "NetworkingTools-Main",
+  "name": "Iproute2",
+  "version": "6.4.0",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "Collection of utilities for controlling TCP / IP networking and traffic control in Linux",
+  "website": "https://www.kernel.org/pub/linux/utils/net/iproute2/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "SystemBase",
+      "version": "0.2.0",
+      "options": []
+    },
+    {
+      "name": "Flex",
+      "version": "2.6.4",
+      "options": []
+    },
+    {
+      "name": "Libcap",
+      "version": "2.69.0",
+      "options": []
+    },
+    {
+      "name": "Libelf",
+      "version": "0.189.0",
+      "options": []
+    },
+    {
+      "name": "Zlib",
+      "version": "1.2.13",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueOptions": []
+}

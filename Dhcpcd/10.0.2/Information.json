@@ -1,0 +1,48 @@
+{
+  "port": "NetworkingTools-Main",
+  "name": "Dhcpcd",
+  "version": "10.0.2",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "DHCP / IPv4LL / IPv6RA / DHCPv6 client",
+  "website": "https://github.com/NetworkConfiguration/dhcpcd/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "SystemBase",
+      "version": "0.2.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Openrc",
+      "description": "Enable openrc support",
+      "active": true,
+      "dependencies": [
+        {
+          "name": "Openrc",
+          "version": ">=0.46.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Llvm",
+      "description": "Enable llvm support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Llvm",
+          "version": "16.0.5",
+          "options": ["Clang"]
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueOptions": []
+}

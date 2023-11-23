@@ -1,0 +1,261 @@
+{
+  "port": "NetworkingTools-Main",
+  "name": "NetworkManager",
+  "version": "1.44.0",
+  "architectures": [
+    "x86_64"
+  ],
+  "description": "Network management daemon",
+  "website": "https://gitlab.freedesktop.org/NetworkManager/NetworkManager",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "name": "Jansson",
+      "version": "2.14.0",
+      "options": []
+    },
+    {
+      "name": "Libndp",
+      "version": "1.8.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Openrc",
+      "description": "Enable openrc support",
+      "active": true,
+      "dependencies": [
+        {
+          "name": "Openrc",
+          "version": ">=0.46.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Curl",
+      "description": "Enable curl support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Curl",
+          "version": "8.2.1",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Dhcpcd",
+      "description": "Enable dhcpcd support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Dhcpcd",
+          "version": "10.0.2",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Gobject-Introspection",
+      "description": "Enable gobject-introspection support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Gobject-Introspection",
+          "version": "1.76.1",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Iptables",
+      "description": "Enable iptables support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Iptables",
+          "version": "1.8.9",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Newt",
+      "description": "Enable newt support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Newt",
+          "version": "0.52.23",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Nss",
+      "description": "Enable nss support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Nss",
+          "version": "3.92.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Gnutls",
+      "description": "Enable gnutls support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Gnutls",
+          "version": "3.8.1",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Polkit",
+      "description": "Enable polkit support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Polkit",
+          "version": "0.123.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Pygobject",
+      "description": "Enable pygobject support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Pygobject",
+          "version": "3.44.1",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Elogind",
+      "description": "Enable elogind support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Elogind",
+          "version": "252.9.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Vala",
+      "description": "Enable vala support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Vala",
+          "version": "0.56.11",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Wpa-Supplicant",
+      "description": "Enable wpa-supplicant support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Wpa-Supplicant",
+          "version": "2.10.0",
+          "options": ["Dbus"]
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Upower",
+      "description": "Enable upower support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Upower",
+          "version": "1.90.2",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Bluez",
+      "description": "Enable bluez support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Bluez",
+          "version": "5.68.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Libpsl",
+      "description": "Enable libpsl support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Libpsl",
+          "version": "0.21.2",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "ModemManager",
+      "description": "Enable modemmanager support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "ModemManager",
+          "version": "1.18.12",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
+      "name": "Ppp",
+      "description": "Enable ppp support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Ppp",
+          "version": "2.5.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueOptions": []
+}
