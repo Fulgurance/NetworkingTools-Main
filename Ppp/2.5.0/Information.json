@@ -10,7 +10,7 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "Libpcap",
+      "name": "Libcap",
       "version": "2.69.0",
       "options": []
     }
