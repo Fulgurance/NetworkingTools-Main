@@ -11,7 +11,7 @@
   "dependencies": [
     {
       "name": "Libgudev",
-      "version": "238.0.0",
+      "version": ">=238.0.0",
       "options": []
     }
   ],
@@ -24,7 +24,7 @@
       "dependencies": [
         {
           "name": "Elogind",
-          "version": "252.9.0",
+          "version": ">=252.9.0",
           "options": []
         }
       ],
@@ -37,7 +37,7 @@
       "dependencies": [
         {
           "name": "Gobject-Introspection",
-          "version": "1.76.1",
+          "version": ">=1.76.1",
           "options": []
         }
       ],
@@ -50,7 +50,7 @@
       "dependencies": [
         {
           "name": "Libmbim",
-          "version": "1.26.4",
+          "version": ">=1.26.4",
           "options": []
         }
       ],
@@ -63,7 +63,7 @@
       "dependencies": [
         {
           "name": "Libqmi",
-          "version": "1.30.8",
+          "version": ">=1.30.8",
           "options": []
         }
       ],
@@ -76,7 +76,7 @@
       "dependencies": [
         {
           "name": "Polkit",
-          "version": "123.0.0",
+          "version": ">=123.0.0",
           "options": []
         }
       ],
@@ -89,7 +89,7 @@
       "dependencies": [
         {
           "name": "Vala",
-          "version": "0.56.11",
+          "version": ">=0.56.11",
           "options": []
         }
       ],
