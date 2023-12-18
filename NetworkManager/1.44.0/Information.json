@@ -18,6 +18,11 @@
       "name": "Libndp",
       "version": "1.8.0",
       "options": []
+    },
+    {
+      "name": "Dbus",
+      "version": "1.14.8",
+      "options": []
     }
   ],
   "kernelDependencies": [],
