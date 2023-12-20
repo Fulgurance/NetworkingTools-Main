@@ -1,11 +1,5 @@
 class Target < ISM::Software
 
-    def prepare
-        @buildDirectory = true
-        @buildDirectoryNames["MainBuild"] = "src"
-        super
-    end
-
     def configure
         super
 
