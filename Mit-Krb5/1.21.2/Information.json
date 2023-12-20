@@ -1,6 +1,6 @@
 {
   "port": "NetworkingTools-Main",
-  "name": "Mit-Kerberos",
+  "name": "Mit-Krb5",
   "version": "1.21.2",
   "architectures": [
     "x86_64"
