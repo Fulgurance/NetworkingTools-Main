@@ -18,6 +18,19 @@
   "kernelDependencies": [],
   "options": [
     {
+      "name": "Openrc",
+      "description": "Enable openrc support",
+      "active": false,
+      "dependencies": [
+        {
+          "name": "Openrc",
+          "version": ">=0.52.1",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    },
+    {
       "name": "Bind",
       "description": "Enable bind support",
       "active": false,
