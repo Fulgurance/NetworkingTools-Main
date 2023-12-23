@@ -108,7 +108,7 @@
     {
       "name": "Nss",
       "description": "Enable nss support",
-      "active": false,
+      "active": true,
       "dependencies": [
         {
           "name": "Nss",
