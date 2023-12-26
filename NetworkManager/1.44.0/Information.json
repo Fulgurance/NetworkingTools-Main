@@ -134,7 +134,7 @@
     {
       "name": "Polkit",
       "description": "Enable polkit support",
-      "active": false,
+      "active": true,
       "dependencies": [
         {
           "name": "Polkit",

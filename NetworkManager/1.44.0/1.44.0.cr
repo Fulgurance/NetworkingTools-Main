@@ -3,6 +3,11 @@ class Target < ISM::Software
     def prepare
         @buildDirectory = true
         super
+
+        runMesonCommand([   "setup",
+                            @buildDirectoryNames["MainBuild"],
+                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}"]],
+                            path: mainWorkDirectoryPath)
     end
 
     def configure
@@ -21,10 +26,9 @@ class Target < ISM::Software
                             "-Dsystemdsystemunitdir=no",
                             "-Dsystemd_journal=false",
                             "-Dqt=false",
-                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}",
-                            ".."],
-                            buildDirectoryPath,
-                            {"CXXFLAGS+" => "-O2 -fPIC"})
+                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}"],
+                            path: mainWorkDirectoryPath,
+                            environment: {"CXXFLAGS+" => "-O2 -fPIC"})
     end
 
     def build
