@@ -138,7 +138,7 @@
       "dependencies": [
         {
           "name": "Polkit",
-          "version": "0.123.0",
+          "version": "123.0.0",
           "options": []
         }
       ],
