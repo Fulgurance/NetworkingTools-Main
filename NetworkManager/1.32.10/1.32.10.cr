@@ -23,7 +23,7 @@ class Target < ISM::Software
                             "-Dqt=false",
                             ".."],
                             buildDirectoryPath,
-                            {"CXXFLAGS+" => "-O2 -fPIC"})
+                            {"CXXFLAGS" => "${CXXFLAGS} -O2 -fPIC"})
     end
 
     def build

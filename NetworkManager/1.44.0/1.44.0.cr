@@ -45,7 +45,7 @@ class Target < ISM::Software
                             "-Dselinux=false",
                             "-Dlibaudit=no"],
                             path: mainWorkDirectoryPath,
-                            environment: {"CXXFLAGS+" => "-O2 -fPIC"})
+                            environment: {"CXXFLAGS" => "${CXXFLAGS} -O2 -fPIC"})
     end
 
     def build
