@@ -26,7 +26,9 @@ class Target < ISM::Software
     def configure
         super
 
-        runMesonCommand([   "--prefix=/usr",
+        runMesonCommand([   "configure",
+                            @buildDirectoryNames["MainBuild"],
+                            "--prefix=/usr",
                             "--buildtype=release",
                             "-Dlibaudit=no",
                             "-Dlibpsl=#{option("Libpsl") ? "true" : "false"}",
