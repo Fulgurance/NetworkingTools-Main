@@ -9,7 +9,8 @@ class Target < ISM::Software
                             "-Dpolkit=#{option("Polkit") ? "true" : "false"}",
                             "-Dsystemdsystemunitdir=no",
                             "-Dsystemd_journal=false",
-                            "-Dselinux=false"],
+                            "-Dselinux=false",
+                            "-Dlibaudit=no"],
                             path: mainWorkDirectoryPath)
     end
 
@@ -30,7 +31,8 @@ class Target < ISM::Software
                             "-Dsystemd_journal=false",
                             "-Dqt=false",
                             "-Dpolkit=#{option("Polkit") ? "true" : "false"}",
-                            "-Dselinux=false"],
+                            "-Dselinux=false",
+                            "-Dlibaudit=no"],
                             path: mainWorkDirectoryPath,
                             environment: {"CXXFLAGS+" => "-O2 -fPIC"})
     end
