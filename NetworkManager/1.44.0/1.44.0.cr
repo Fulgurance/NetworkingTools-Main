@@ -6,7 +6,9 @@ class Target < ISM::Software
 
         runMesonCommand([   "setup",
                             @buildDirectoryNames["MainBuild"],
-                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}"],
+                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}",
+                            "-Dsystemdsystemunitdir=no",
+                            "-Dsystemd_journal=false"],
                             path: mainWorkDirectoryPath)
     end
 
