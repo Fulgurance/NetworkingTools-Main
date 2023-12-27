@@ -8,7 +8,8 @@ class Target < ISM::Software
                             @buildDirectoryNames["MainBuild"],
                             "-Dpolkit=#{option("Polkit") ? "true" : "false"}",
                             "-Dsystemdsystemunitdir=no",
-                            "-Dsystemd_journal=false"],
+                            "-Dsystemd_journal=false",
+                            "-Dselinux=false"],
                             path: mainWorkDirectoryPath)
     end
 
@@ -28,7 +29,8 @@ class Target < ISM::Software
                             "-Dsystemdsystemunitdir=no",
                             "-Dsystemd_journal=false",
                             "-Dqt=false",
-                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}"],
+                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}",
+                            "-Dselinux=false"],
                             path: mainWorkDirectoryPath,
                             environment: {"CXXFLAGS+" => "-O2 -fPIC"})
     end
