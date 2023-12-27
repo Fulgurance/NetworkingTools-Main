@@ -23,11 +23,6 @@
       "name": "Dbus",
       "version": "1.14.8",
       "options": []
-    },
-    {
-      "name": "P11-Kit",
-      "version": ">=0.25.0",
-      "options": []
     }
   ],
   "kernelDependencies": [],
