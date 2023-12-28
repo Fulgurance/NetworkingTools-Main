@@ -9,7 +9,8 @@ class Target < ISM::Software
                             "--disable-static",
                             "--disable-maintainer-mode",
                             "--with-systemd-journal=no",
-                            "--with-systemd-suspend-resume"],
+                            "--with-systemd-suspend-resume",
+                            "#{option("Libmbim") ? "--with-mbim" : "--without-mbim"}"],
                             buildDirectoryPath)
     end
 
