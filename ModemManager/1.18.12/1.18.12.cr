@@ -10,7 +10,8 @@ class Target < ISM::Software
                             "--disable-maintainer-mode",
                             "--with-systemd-journal=no",
                             "--with-systemd-suspend-resume",
-                            "#{option("Libmbim") ? "--with-mbim" : "--without-mbim"}"],
+                            "#{option("Libmbim") ? "--with-mbim" : "--without-mbim"}",
+                            "#{option("Libqmi") ? "--with-qmi" : "--without-qmi"}"],
                             buildDirectoryPath)
     end
 
