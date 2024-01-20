@@ -32,14 +32,7 @@ class Target < ISM::Software
     def install
         super
 
-        runGroupAddCommand(["-g","52","dhcpcd"])
-        runUserAddCommand([ "-c","\'dhcpcd PrivSep\'",
-                            "-d","/var/lib/dhcpcd",
-                            "-g","dhcpcd",
-                            "-s","/bin/false",
-                            "-u","52","dhcpcd"])
         setPermissions("#{Ism.settings.rootPath}var/lib/dhcpcd",0o700)
-        setOwner("#{Ism.settings.rootPath}var/lib/dhcpcd","dhcpcd","dhcpcd")
     end
 
 end

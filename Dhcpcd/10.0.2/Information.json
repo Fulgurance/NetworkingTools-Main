@@ -10,8 +10,13 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "SystemBase",
-      "version": "0.2.0",
+      "name": "@SystemUsers-Main:Dhcpcd",
+      "version": ">=0.1.0",
+      "options": []
+    },
+    {
+      "name": "@SystemGroups-Main:Dhcpcd",
+      "version": ">=0.1.0",
       "options": []
     }
   ],
