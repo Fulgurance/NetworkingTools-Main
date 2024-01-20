@@ -18,6 +18,11 @@
       "name": "Libndp",
       "version": "1.8.0",
       "options": []
+    },
+    {
+      "name": "@SystemGroups-Main:Netdev",
+      "version": ">=0.1.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],

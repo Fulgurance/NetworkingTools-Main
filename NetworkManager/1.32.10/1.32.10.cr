@@ -48,10 +48,4 @@ class Target < ISM::Software
         end
     end
 
-    def install
-        super
-
-        runGroupAddCommand(["-fg","86","netdev"])
-    end
-
 end

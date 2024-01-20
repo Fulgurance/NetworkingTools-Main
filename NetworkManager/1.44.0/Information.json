@@ -23,6 +23,11 @@
       "name": "Dbus",
       "version": "1.14.8",
       "options": []
+    },
+    {
+      "name": "@SystemGroups-Main:Netdev",
+      "version": ">=0.1.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],
