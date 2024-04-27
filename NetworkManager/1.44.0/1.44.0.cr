@@ -5,6 +5,8 @@ class Target < ISM::Software
         super
 
         runMesonCommand([   "setup",
+                            "--reconfigure",
+                            "-Dauto_features=disabled",
                             @buildDirectoryNames["MainBuild"],
                             "-Dlibaudit=no",
                             "-Dlibpsl=#{option("Libpsl") ? "true" : "false"}",

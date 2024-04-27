@@ -8,7 +8,10 @@ class Target < ISM::Software
     def configure
         super
 
-        runMesonCommand([   "--prefix=/usr",
+        runMesonCommand([   "setup",
+                            "--reconfigure",
+                            "-Dauto_features=disabled",
+                            "--prefix=/usr",
                             "--buildtype=release",
                             "-Dlibaudit=no",
                             "-Dlibpsl=false",
