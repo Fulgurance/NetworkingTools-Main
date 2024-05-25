@@ -2,14 +2,13 @@
   "port": "NetworkingTools-Main",
   "name": "ModemManager",
   "version": "1.18.12",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "DBus-activated daemon which controls mobile broadband (2G/3G/4G) devices and connections",
   "website": "https://www.freedesktop.org/wiki/Software/ModemManager/",
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "BaseLibraries-Main",
       "name": "Libgudev",
       "version": ">=238.0.0",
       "options": []
@@ -23,6 +22,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "Utilities-Main",
           "name": "Elogind",
           "version": ">=252.9.0",
           "options": []
@@ -36,6 +36,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "BaseLibraries-Main",
           "name": "Gobject-Introspection",
           "version": ">=1.76.1",
           "options": []
@@ -49,6 +50,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingLibraries-Main",
           "name": "Libmbim",
           "version": ">=1.26.4",
           "options": []
@@ -62,6 +64,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingLibraries-Main",
           "name": "Libqmi",
           "version": ">=1.30.8",
           "options": []
@@ -75,6 +78,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "Security-Main",
           "name": "Polkit",
           "version": ">=123.0.0",
           "options": []
@@ -88,6 +92,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "ProgrammingLanguages-Main",
           "name": "Vala",
           "version": ">=0.56.11",
           "options": []

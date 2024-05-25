@@ -2,20 +2,20 @@
   "port": "NetworkingTools-Main",
   "name": "Dhcpcd",
   "version": "10.0.2",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "DHCP / IPv4LL / IPv6RA / DHCPv6 client",
   "website": "https://github.com/NetworkConfiguration/dhcpcd/",
   "installedFiles": [],
   "dependencies": [
     {
-      "name": "@SystemUsers-Main:Dhcpcd",
+      "port": "SystemUsers-Main",
+      "name": "Dhcpcd",
       "version": ">=0.1.0",
       "options": []
     },
     {
-      "name": "@SystemGroups-Main:Dhcpcd",
+      "port": "SystemGroups-Main",
+      "name": "Dhcpcd",
       "version": ">=0.1.0",
       "options": []
     }
@@ -28,6 +28,7 @@
       "active": true,
       "dependencies": [
         {
+          "port": "InitSystems-Main",
           "name": "Openrc",
           "version": ">=0.46.0",
           "options": []
@@ -41,8 +42,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "ProgrammingLanguagess-Main",
           "name": "Llvm",
-          "version": "16.0.5",
+          "version": ">=16.0.5",
           "options": ["Clang"]
         }
       ],

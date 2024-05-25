@@ -2,14 +2,13 @@
   "port": "NetworkingTools-Main",
   "name": "Mit-Krb5",
   "version": "1.21.2",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "The free MIT implementation of the kerberos network authentication protocol",
   "website": "https://web.mit.edu/kerberos/dist/",
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "BaseLibraries-Main",
       "name": "SystemBase",
       "version": ">=0.2.0",
       "options": []
@@ -23,6 +22,7 @@
       "active": true,
       "dependencies": [
         {
+          "port": "InitSystems-Main",
           "name": "Openrc",
           "version": ">=0.52.1",
           "options": []
@@ -36,6 +36,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingTools-Extra",
           "name": "Bind",
           "version": ">=9.18.18",
           "options": []
@@ -49,6 +50,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "Security-Main",
           "name": "Gnupg",
           "version": ">=2.4.3",
           "options": []
@@ -62,6 +64,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "Security-Main",
           "name": "Keyutils",
           "version": ">=1.6.1",
           "options": []
@@ -75,6 +78,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "BaseLibraries-Main",
           "name": "Openldap",
           "version": ">=2.6.6",
           "options": []
@@ -88,6 +92,7 @@
       "active": false,
       "dependencies": [
         {
+          "port": "ProgrammingTools-Main",
           "name": "Yasm",
           "version": ">=1.3.0",
           "options": []

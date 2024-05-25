@@ -2,30 +2,32 @@
   "port": "NetworkingTools-Main",
   "name": "NetworkManager",
   "version": "1.44.0",
-  "architectures": [
-    "x86_64"
-  ],
+  "architectures": ["x86_64"],
   "description": "Network management daemon",
   "website": "https://gitlab.freedesktop.org/NetworkManager/NetworkManager",
   "installedFiles": [],
   "dependencies": [
     {
+      "port": "BaseLibraries-Main",
       "name": "Jansson",
-      "version": "2.14.0",
+      "version": ">=2.14.0",
       "options": []
     },
     {
+      "port": "NetworkingLibraries-Main",
       "name": "Libndp",
-      "version": "1.8.0",
+      "version": ">=1.8.0",
       "options": []
     },
     {
+      "port": "Utilities-Main",
       "name": "Dbus",
-      "version": "1.14.8",
+      "version": ">=1.14.8",
       "options": []
     },
     {
-      "name": "@SystemGroups-Main:Netdev",
+      "port": "SystemGroups-Main",
+      "name": "Netdev",
       "version": ">=0.1.0",
       "options": []
     }
@@ -38,6 +40,7 @@
       "active": true,
       "dependencies": [
         {
+          "port": "InitSystems-Main",
           "name": "Openrc",
           "version": ">=0.46.0",
           "options": []
@@ -51,8 +54,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingLibraries-Main",
           "name": "Curl",
-          "version": "8.2.1",
+          "version": ">=8.2.1",
           "options": []
         }
       ],
@@ -64,8 +68,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingTools-Main",
           "name": "Dhcpcd",
-          "version": "10.0.2",
+          "version": ">=10.0.2",
           "options": []
         }
       ],
@@ -77,8 +82,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "BaseLibraries-Main",
           "name": "Gobject-Introspection",
-          "version": "1.76.1",
+          "version": ">=1.76.1",
           "options": []
         }
       ],
@@ -90,8 +96,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "Utilities-Main",
           "name": "Iptables",
-          "version": "1.8.9",
+          "version": ">=1.8.9",
           "options": []
         }
       ],
@@ -103,8 +110,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "GraphicsLibraries-Main",
           "name": "Newt",
-          "version": "0.52.23",
+          "version": ">=0.52.23",
           "options": []
         }
       ],
@@ -116,8 +124,9 @@
       "active": true,
       "dependencies": [
         {
+          "port": "SecurityLibraries-Main",
           "name": "Nss",
-          "version": "3.92.0",
+          "version": ">=3.92.0",
           "options": []
         }
       ],
@@ -129,8 +138,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "SecurityLibraries-Main",
           "name": "Gnutls",
-          "version": "3.8.1",
+          "version": ">=3.8.1",
           "options": []
         }
       ],
@@ -142,8 +152,9 @@
       "active": true,
       "dependencies": [
         {
+          "port": "Security-Main",
           "name": "Polkit",
-          "version": "123.0.0",
+          "version": ">=123.0.0",
           "options": []
         }
       ],
@@ -155,8 +166,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "BaseLibraries-Main",
           "name": "Pygobject",
-          "version": "3.44.1",
+          "version": ">=3.44.1",
           "options": []
         }
       ],
@@ -168,8 +180,9 @@
       "active": true,
       "dependencies": [
         {
+          "port": "Utilities-Main",
           "name": "Elogind",
-          "version": "252.9.0",
+          "version": ">=252.9.0",
           "options": []
         }
       ],
@@ -181,8 +194,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "ProgrammingLanguages-Main",
           "name": "Vala",
-          "version": "0.56.11",
+          "version": ">=0.56.11",
           "options": []
         }
       ],
@@ -194,8 +208,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingTools-Main",
           "name": "Wpa-Supplicant",
-          "version": "2.10.0",
+          "version": ">=2.10.0",
           "options": ["Dbus"]
         }
       ],
@@ -207,8 +222,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "Utilities-Main",
           "name": "Upower",
-          "version": "1.90.2",
+          "version": ">=1.90.2",
           "options": []
         }
       ],
@@ -220,8 +236,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "Utilities-Main",
           "name": "Bluez",
-          "version": "5.68.0",
+          "version": ">=5.68.0",
           "options": []
         }
       ],
@@ -233,8 +250,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingLibraries-Main",
           "name": "Libpsl",
-          "version": "0.21.2",
+          "version": ">=0.21.2",
           "options": []
         }
       ],
@@ -246,8 +264,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingTools-Main",
           "name": "ModemManager",
-          "version": "1.18.12",
+          "version": ">=1.18.12",
           "options": []
         }
       ],
@@ -259,8 +278,9 @@
       "active": false,
       "dependencies": [
         {
+          "port": "NetworkingTools-Main",
           "name": "Ppp",
-          "version": "2.5.0",
+          "version": ">=2.5.0",
           "options": []
         }
       ],
