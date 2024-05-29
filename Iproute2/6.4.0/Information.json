@@ -14,7 +14,7 @@
       "options": []
     },
     {
-      "port": "utilities-Main",
+      "port": "Utilities-Main",
       "name": "Flex",
       "version": ">=2.6.4",
       "options": []
