@@ -33,7 +33,7 @@ class Target < ISM::Software
     def install
         super
 
-        setPermissions("#{Ism.settings.rootPath}var/lib/dhcpcd",0o700)
+        runChmodCommand(["0700","/var/lib/dhcpcd"])
     end
 
 end

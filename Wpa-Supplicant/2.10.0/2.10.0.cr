@@ -70,12 +70,12 @@ class Target < ISM::Software
     def install
         super
 
-        setPermissions("#{Ism.settings.rootPath}usr/sbin",0o755)
+        runChmodCommand(["0755","/usr/sbin"])
 
         if option("Dbus")
-            setPermissions("#{Ism.settings.rootPath}usr/share/dbus-1/system-services",0o644)
-            setPermissions("#{Ism.settings.rootPath}etc/dbus-1/system.d",0o755)
-            setPermissions("#{Ism.settings.rootPath}etc/dbus-1/system.d/wpa_supplicant.conf",0o644)
+            runChmodCommand(["0644","/usr/share/dbus-1/system-services"])
+            runChmodCommand(["0755","/etc/dbus-1/system.d"])
+            runChmodCommand(["0644","/etc/dbus-1/system.d/wpa_supplicant.conf"])
         end
 
         runUpdateDesktopDatabaseCommand(["-q"])
