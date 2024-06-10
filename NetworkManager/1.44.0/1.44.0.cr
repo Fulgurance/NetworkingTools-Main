@@ -60,15 +60,15 @@ class Target < ISM::Software
 
         runNinjaCommand(["install"],buildDirectoryPath,{"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/")
 
-        moveFile("#{mainWorkDirectoryPath(false)}/10-openrc-status","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status")
+        moveFile("#{mainWorkDirectoryPath}/10-openrc-status","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status")
 
         runChmodCommand(["+x","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status"])
-        setOwner("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status","root","root")
+        setOwner("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status","root","root")
 
         if option("Openrc")
-            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/NetworkManager-Init.d","networkmanager")
+            prepareOpenrcServiceInstallation("#{workDirectoryPath}/NetworkManager-Init.d","networkmanager")
         end
     end
 

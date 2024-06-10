@@ -3,8 +3,8 @@ class Target < ISM::Software
     def prepare
         super
 
-        fileReplaceLineContaining("#{buildDirectoryPath(false)}/Makefile","ARPD","")
-        deleteFile("#{buildDirectoryPath(false)}/man/man8/arpd.8")
+        fileReplaceLineContaining("#{buildDirectoryPath}/Makefile","ARPD","")
+        deleteFile("#{buildDirectoryPath}/man/man8/arpd.8")
     end
     
     def build

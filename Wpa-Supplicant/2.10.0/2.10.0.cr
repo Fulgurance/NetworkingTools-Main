@@ -48,22 +48,22 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/sbin")
 
-        moveFile("#{buildDirectoryPath(false)}/wpa_cli","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin/wpa_cli")
-        moveFile("#{buildDirectoryPath(false)}/wpa_passphrase","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin/wpa_passphrase")
-        moveFile("#{buildDirectoryPath(false)}/wpa_supplicant","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/sbin/wpa_supplicant")
+        moveFile("#{buildDirectoryPath}/wpa_cli","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/sbin/wpa_cli")
+        moveFile("#{buildDirectoryPath}/wpa_passphrase","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/sbin/wpa_passphrase")
+        moveFile("#{buildDirectoryPath}/wpa_supplicant","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/sbin/wpa_supplicant")
 
         if option("Dbus")
-            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/dbus-1/system-services")
-            makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/dbus-1/system.d")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/share/dbus-1/system-services")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/dbus-1/system.d")
 
-            moveFile("#{buildDirectoryPath(false)}/dbus/fi.w1.wpa_supplicant1.service","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}usr/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service")
-            moveFile("#{buildDirectoryPath(false)}/dbus/dbus-wpa_supplicant.conf","#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/dbus-1/system.d/wpa_supplicant.conf")
+            moveFile("#{buildDirectoryPath}/dbus/fi.w1.wpa_supplicant1.service","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service")
+            moveFile("#{buildDirectoryPath}/dbus/dbus-wpa_supplicant.conf","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/dbus-1/system.d/wpa_supplicant.conf")
         end
 
         if option("Openrc")
-            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/Wpa-Supplicant-Init.d","wpa_supplicant")
+            prepareOpenrcServiceInstallation("#{workDirectoryPath}/Wpa-Supplicant-Init.d","wpa_supplicant")
         end
     end
 

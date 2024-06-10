@@ -27,29 +27,29 @@ class Target < ISM::Software
                     "install"],
                     path: buildDirectoryPath)
 
-        makeDirectory("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/conf.d")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/conf.d")
 
         mitKrb5kadmindData = <<-CODE
         KADMIND_OPTS=""
         CODE
-        fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/conf.d/mit-krb5kadmind",mitKrb5kadmindData)
+        fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/conf.d/mit-krb5kadmind",mitKrb5kadmindData)
 
         mitKrb5kdcData = <<-CODE
         KDC_OPTS=""
         CODE
-        fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/conf.d/mit-krb5kdc",mitKrb5kdcData)
+        fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/conf.d/mit-krb5kdc",mitKrb5kdcData)
 
         mitKrb5kpropdData = <<-CODE
         KPROPD_OPTS=""
         CODE
-        fileWriteData("#{builtSoftwareDirectoryPath(false)}#{Ism.settings.rootPath}etc/conf.d/mit-krb5kpropd",mitKrb5kpropdData)
+        fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/conf.d/mit-krb5kpropd",mitKrb5kpropdData)
 
         if option("Openrc")
-            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/Mit-Krb5kadmind-Init.d","mit-krb5kadmind")
+            prepareOpenrcServiceInstallation("#{workDirectoryPath}/Mit-Krb5kadmind-Init.d","mit-krb5kadmind")
 
-            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/Mit-Krb5kdc-Init.d","mit-krb5kdc")
+            prepareOpenrcServiceInstallation("#{workDirectoryPath}/Mit-Krb5kdc-Init.d","mit-krb5kdc")
 
-            prepareOpenrcServiceInstallation("#{workDirectoryPath(false)}/Mit-Krb5kpropd-Init.d","mit-krb5kpropd")
+            prepareOpenrcServiceInstallation("#{workDirectoryPath}/Mit-Krb5kpropd-Init.d","mit-krb5kpropd")
         end
     end
 
