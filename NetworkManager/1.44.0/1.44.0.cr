@@ -64,12 +64,16 @@ class Target < ISM::Software
 
         moveFile("#{mainWorkDirectoryPath}/10-openrc-status","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status")
 
-        runChmodCommand(["+x","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status"])
-        setOwner("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status","root","root")
-
         if option("Openrc")
             prepareOpenrcServiceInstallation("#{workDirectoryPath}/NetworkManager-Init.d","networkmanager")
         end
+    end
+
+    def install
+        super
+
+        runChmodCommand(["+x","/etc/NetworkManager/dispatcher.d/10-openrc-status"])
+        runChownCommand(["root:root","/etc/NetworkManager/dispatcher.d/10-openrc-status"])
     end
 
 end
