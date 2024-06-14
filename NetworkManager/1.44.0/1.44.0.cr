@@ -4,49 +4,49 @@ class Target < ISM::Software
         @buildDirectory = true
         super
 
-        runMesonCommand([   "setup",
-                            "--reconfigure",
-                            @buildDirectoryNames["MainBuild"],
-                            "-Dlibaudit=no",
-                            "-Dlibpsl=#{option("Libpsl") ? "true" : "false"}",
-                            "-Dnmtui=#{option("Newt") ? "true" : "false"}",
-                            "-Dovs=false",
-                            "-Dppp=#{option("Ppp") ? "true" : "false"}",
-                            "-Dselinux=false",
-                            "-Dsession_tracking=elogind",
-                            "-Dmodem_manager=#{option("ModemManager") ? "true" : "false"}",
-                            "-Dsystemdsystemunitdir=no",
-                            "-Dsystemd_journal=false",
-                            "-Dqt=false",
-                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}",
-                            "-Dselinux=false",
-                            "-Dlibaudit=no"],
-                            path: mainWorkDirectoryPath)
+        runMesonCommand(arguments:  "setup                                                          \
+                                    --reconfigure                                                   \
+                                    #{@buildDirectoryNames["MainBuild"]}                            \
+                                    -Dlibaudit=no                                                   \
+                                    -Dlibpsl=#{option("Libpsl") ? "true" : "false"}                 \
+                                    -Dnmtui=#{option("Newt") ? "true" : "false"}                    \
+                                    -Dovs=false                                                     \
+                                    -Dppp=#{option("Ppp") ? "true" : "false"}                       \
+                                    -Dselinux=false                                                 \
+                                    -Dsession_tracking=elogind                                      \
+                                    -Dmodem_manager=#{option("ModemManager") ? "true" : "false"}    \
+                                    -Dsystemdsystemunitdir=no                                       \
+                                    -Dsystemd_journal=false                                         \
+                                    -Dqt=false                                                      \
+                                    -Dpolkit=#{option("Polkit") ? "true" : "false"}                 \
+                                    -Dselinux=false                                                 \
+                                    -Dlibaudit=no",
+                        path:       mainWorkDirectoryPath)
     end
 
     def configure
         super
 
-        runMesonCommand([   "configure",
-                            @buildDirectoryNames["MainBuild"],
-                            "--prefix=/usr",
-                            "--buildtype=release",
-                            "-Dlibaudit=no",
-                            "-Dlibpsl=#{option("Libpsl") ? "true" : "false"}",
-                            "-Dnmtui=#{option("Newt") ? "true" : "false"}",
-                            "-Dovs=false",
-                            "-Dppp=#{option("Ppp") ? "true" : "false"}",
-                            "-Dselinux=false",
-                            "-Dsession_tracking=elogind",
-                            "-Dmodem_manager=#{option("ModemManager") ? "true" : "false"}",
-                            "-Dsystemdsystemunitdir=no",
-                            "-Dsystemd_journal=false",
-                            "-Dqt=false",
-                            "-Dpolkit=#{option("Polkit") ? "true" : "false"}",
-                            "-Dselinux=false",
-                            "-Dlibaudit=no"],
-                            path: mainWorkDirectoryPath,
-                            environment: {"CXXFLAGS" => "${CXXFLAGS} -O2 -fPIC"})
+        runMesonCommand(arguments:      "configure                                                      \
+                                        #{@buildDirectoryNames["MainBuild"]}                            \
+                                        --prefix=/usr                                                   \
+                                        --buildtype=release                                             \
+                                        -Dlibaudit=no                                                   \
+                                        -Dlibpsl=#{option("Libpsl") ? "true" : "false"}                 \
+                                        -Dnmtui=#{option("Newt") ? "true" : "false"}                    \
+                                        -Dovs=false                                                     \
+                                        -Dppp=#{option("Ppp") ? "true" : "false"}                       \
+                                        -Dselinux=false                                                 \
+                                        -Dsession_tracking=elogind                                      \
+                                        -Dmodem_manager=#{option("ModemManager") ? "true" : "false"}    \
+                                        -Dsystemdsystemunitdir=no                                       \
+                                        -Dsystemd_journal=false                                         \
+                                        -Dqt=false                                                      \
+                                        -Dpolkit=#{option("Polkit") ? "true" : "false"}                 \
+                                        -Dselinux=false                                                 \
+                                        -Dlibaudit=no",
+                        path:           mainWorkDirectoryPath,
+                        environment:    {"CXXFLAGS" => "${CXXFLAGS} -O2 -fPIC"})
     end
 
     def build
@@ -58,22 +58,26 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        runNinjaCommand(["install"],buildDirectoryPath,{"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
+        runNinjaCommand(arguments:      "install",
+                        path:           buildDirectoryPath,
+                        environment:    {"DESTDIR" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
 
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/")
 
-        moveFile("#{mainWorkDirectoryPath}/10-openrc-status","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status")
+        moveFile(   "#{mainWorkDirectoryPath}/10-openrc-status",
+                    "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/NetworkManager/dispatcher.d/10-openrc-status")
 
         if option("Openrc")
-            prepareOpenrcServiceInstallation("#{workDirectoryPath}/NetworkManager-Init.d","networkmanager")
+            prepareOpenrcServiceInstallation(   path:   "#{workDirectoryPath}/NetworkManager-Init.d",
+                                                name:   "networkmanager")
         end
     end
 
     def install
         super
 
-        runChmodCommand(["+x","/etc/NetworkManager/dispatcher.d/10-openrc-status"])
-        runChownCommand(["root:root","/etc/NetworkManager/dispatcher.d/10-openrc-status"])
+        runChmodCommand("+x /etc/NetworkManager/dispatcher.d/10-openrc-status")
+        runChownCommand("root:root /etc/NetworkManager/dispatcher.d/10-openrc-status")
     end
 
 end

@@ -3,14 +3,16 @@ class Target < ISM::Software
     def prepare
         super
 
-        fileReplaceText("#{buildDirectoryPath}/intltool-update.in","\${","\$\{")
+        fileReplaceText(path:       "#{buildDirectoryPath}/intltool-update.in",
+                        text:       "\${",
+                        newText:    "\$\{")
     end
 
     def configure
         super
 
-        configureSource([   "--prefix=/usr"],
-                            buildDirectoryPath)
+        configureSource(arguments:  "--prefix=/usr",
+                        path:       buildDirectoryPath)
     end
 
     def build
@@ -22,15 +24,19 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
+
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/share/doc/intltool-0.51.0")
-        copyFile("#{buildDirectoryPath}doc/I18N-HOWTO","#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/share/doc/intltool-0.51.0/I18N-HOWTO")
+
+        copyFile(   "#{buildDirectoryPath}doc/I18N-HOWTO",
+                    "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}usr/share/doc/intltool-0.51.0/I18N-HOWTO")
     end
 
     def install
         super
 
-        runChmodCommand(["0644","/usr/share/doc/intltool-0.51.0/I18N-HOWTO"])
+        runChmodCommand("0644 /usr/share/doc/intltool-0.51.0/I18N-HOWTO")
     end
 
 end

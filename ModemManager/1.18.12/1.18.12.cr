@@ -3,16 +3,16 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource([   "--prefix=/usr",
-                            "--sysconfdir=/etc",
-                            "--localstatedir=/var",
-                            "--disable-static",
-                            "--disable-maintainer-mode",
-                            "--with-systemd-journal=no",
-                            "--with-systemd-suspend-resume",
-                            "#{option("Libmbim") ? "--with-mbim" : "--without-mbim"}",
-                            "#{option("Libqmi") ? "--with-qmi" : "--without-qmi"}"],
-                            buildDirectoryPath)
+        configureSource(arguments:  "--prefix=/usr                                          \
+                                    --sysconfdir=/etc                                       \
+                                    --localstatedir=/var                                    \
+                                    --disable-static                                        \
+                                    --disable-maintainer-mode                               \
+                                    --with-systemd-journal=no                               \
+                                    --with-systemd-suspend-resume                           \
+                                    #{option("Libmbim") ? "--with-mbim" : "--without-mbim"} \
+                                    #{option("Libqmi") ? "--with-qmi" : "--without-qmi"}",
+                        path:       buildDirectoryPath)
     end
 
     def build
@@ -24,7 +24,8 @@ class Target < ISM::Software
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
+                    path:       buildDirectoryPath)
     end
 
 end
