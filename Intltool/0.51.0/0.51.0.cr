@@ -1,13 +1,5 @@
 class Target < ISM::Software
 
-    def prepare
-        super
-
-        fileReplaceText(path:       "#{buildDirectoryPath}/intltool-update.in",
-                        text:       "\${",
-                        newText:    "\$\{")
-    end
-
     def configure
         super
 
