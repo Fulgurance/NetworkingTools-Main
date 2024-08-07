@@ -3,12 +3,12 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(arguments:  "--prefix=/usr          \
-                                    --sysconfdir=/etc       \
-                                    --localstatedir=/var    \
-                                    --enable-library        \
-                                    --disable-manpages      \
-                                    --disable-systemd",
+        configureSource(arguments:  "--prefix=/usr                              \
+                                    --sysconfdir=/etc/ssh                       \
+                                    --with-privsep-path=/var/lib/sshd           \
+                                    --with-default-path=/usr/bin                \
+                                    --with-superuser-path=/usr/sbin:/usr/bin    \
+                                    --with-pid-dir=/run",
                         path:       buildDirectoryPath)
     end
 
