@@ -1,0 +1,50 @@
+{
+  "port": "NetworkingTools-Main",
+  "name": "Bluez",
+  "version": "5.68.0",
+  "architectures": ["x86_64"],
+  "description": "Provides support for the core Bluetooth layers and protocols",
+  "website": "https://www.bluez.org/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "Utilities-Main",
+      "name": "Dbus",
+      "version": ">=1.14.8",
+      "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Glib",
+      "version": ">=2.76.4",
+      "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Libical",
+      "version": ">=3.0.16",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [
+    {
+      "name": "Openrc",
+      "description": "Enable openrc support",
+      "active": true,
+      "dependencies": [
+        {
+          "port": "InitSystems-Main",
+          "name": "Openrc",
+          "version": ">=0.46.0",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}
