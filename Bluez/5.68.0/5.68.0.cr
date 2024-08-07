@@ -3,12 +3,12 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(arguments:  "--prefix=/usr                  \
-                                    --sysconfdir=/etc               \
-                                    --libexecdir=/usr/lib/dhcpcd    \
-                                    --dbdir=/var/lib/dhcpcd         \
-                                    --runstatedir=/run              \
-                                    --privsepuser=dhcpcd",
+        configureSource(arguments:  "--prefix=/usr          \
+                                    --sysconfdir=/etc       \
+                                    --localstatedir=/var    \
+                                    --enable-library        \
+                                    --disable-manpages      \
+                                    --disable-systemd",
                         path:       buildDirectoryPath)
     end
 
@@ -24,18 +24,25 @@ class Target < ISM::Software
         makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
                     path:       buildDirectoryPath)
 
-        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}var/lib/dhcpcd")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/bluetooth")
+
+        copyFile(   "#{buildDirectoryPath}/src/main.conf",
+                    "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/bluetooth/main.conf")
 
         if option("Openrc")
-            prepareOpenrcServiceInstallation(   path:   "#{workDirectoryPath}/Dhcpcd-Init.d",
-                                                name:   "dhcpcd")
+            prepareOpenrcServiceInstallation(   path:   "#{workDirectoryPath}/Bluetooth-Init.d",
+                                                name:   "bluetooth")
         end
+
+        makeLink(   target: "../libexec/bluetooth/bluetoothd",
+                    path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/sbin/bluetoothd",
+                    type:   :symbolicLinkByOverwrite)
     end
 
     def install
         super
 
-        runChmodCommand("0700 /var/lib/dhcpcd")
+        runChmodCommand("0755 /etc/bluetooth")
     end
 
 end
