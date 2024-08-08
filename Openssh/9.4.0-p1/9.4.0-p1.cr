@@ -33,6 +33,21 @@ class Target < ISM::Software
         fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/ssh/sshd_config",sshdConfigData)
 
         if option("Linux-Pam")
+            makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/pam.d")
+
+            pamLoginData = <<-CODE
+            auth      optional    pam_faildelay.so  delay=3000000
+            auth      requisite   pam_nologin.so
+            auth      include     system-auth
+            account   required    pam_access.so
+            account   include     system-account
+            session   required    pam_env.so
+            session   required    pam_limits.so
+            session   include     system-session
+            password  include     system-password
+            CODE
+            fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/pam.d/sshd",pamLoginData)
+
             if File.exists?("#{Ism.settings.rootPath}etc/pam.d/sshd")
                 copyFile(   "/etc/pam.d/sshd",
                             "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/pam.d/sshd")
