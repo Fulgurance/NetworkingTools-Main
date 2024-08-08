@@ -3,11 +3,12 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(arguments:  "--prefix=/usr                              \
-                                    --sysconfdir=/etc/ssh                       \
-                                    --with-privsep-path=/var/lib/sshd           \
-                                    --with-default-path=/usr/bin                \
-                                    --with-superuser-path=/usr/sbin:/usr/bin    \
+        configureSource(arguments:  "--prefix=/usr                                          \
+                                    --sysconfdir=/etc/ssh                                   \
+                                    --with-privsep-path=/var/lib/sshd                       \
+                                    --with-default-path=/usr/bin                            \
+                                    --with-superuser-path=/usr/sbin:/usr/bin                \
+                                    #{option("Linux-Pam") ? "--with-pam" : "--without-pam"} \
                                     --with-pid-dir=/run",
                         path:       buildDirectoryPath)
     end
@@ -24,25 +25,45 @@ class Target < ISM::Software
         makeSource( arguments:  "DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
                     path:       buildDirectoryPath)
 
-        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/bluetooth")
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/ssh")
 
-        copyFile(   "#{buildDirectoryPath}/src/main.conf",
-                    "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/bluetooth/main.conf")
+        sshdConfigData = <<-CODE
+        PermitRootLogin no
+        CODE
+        fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/etc/ssh/sshd_config",sshdConfigData)
 
-        if option("Openrc")
-            prepareOpenrcServiceInstallation(   path:   "#{workDirectoryPath}/Bluetooth-Init.d",
-                                                name:   "bluetooth")
+        if option("Linux-Pam")
+            if File.exists?("#{Ism.settings.rootPath}etc/pam.d/sshd")
+                copyFile(   "/etc/pam.d/sshd",
+                            "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/pam.d/sshd")
+            else
+                generateEmptyFile("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/pam.d/sshd")
+            end
+
+            sshdData = <<-CODE
+            session  required    pam_loginuid.so
+            session  optional    pam_elogind.so
+            CODE
+            fileUpdateContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/pam.d/sshd",sshdData)
+
+            sshdConfigData = <<-CODE
+            UsePAM yes
+            CODE
+            fileUpdateContent("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/ssh/sshd_config",sshdConfigData)
         end
 
-        makeLink(   target: "../libexec/bluetooth/bluetoothd",
-                    path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/sbin/bluetoothd",
-                    type:   :symbolicLinkByOverwrite)
+        if option("Openrc")
+            prepareOpenrcServiceInstallation(   path:   "#{workDirectoryPath}/Sshd-Init.d",
+                                                name:   "sshd")
+        end
     end
 
     def install
         super
 
-        runChmodCommand("0755 /etc/bluetooth")
+        if option("Linux-Pam")
+            runChmodCommand("644 /etc/pam.d/sshd")
+        end
     end
 
 end
