@@ -49,7 +49,7 @@
                           "CONFIG_CRYPTO_CMAC",
                           "CONFIG_CRYPTO_USER_API_HASH",
                           "CONFIG_CRYPTO_USER_API_SKCIPHER",
-                          "CONFIG_CRYPTO_USER_API_AEAD",
+                          "CONFIG_CRYPTO_USER_API_AEAD"
   ],
   "options": [
     {
