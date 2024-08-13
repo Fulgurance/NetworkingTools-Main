@@ -17,7 +17,7 @@
       "port": "NetworkingTools-Main",
       "name": "NetworkManager",
       "version": ">=1.44.0",
-      "options": []
+      "options": ["Openvpn"]
     }
   ],
   "kernelDependencies": [],
