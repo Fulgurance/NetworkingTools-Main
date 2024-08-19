@@ -88,7 +88,7 @@ class Target < ISM::Software
             runChmodCommand("0644 /etc/dbus-1/system.d/wpa_supplicant.conf")
         end
 
-        if softwareIsInstalled("Desktop-File-Utils")
+        if softwareIsInstalled("@Utilities-Main:Desktop-File-Utils")
             runUpdateDesktopDatabaseCommand("-q")
         end
     end
