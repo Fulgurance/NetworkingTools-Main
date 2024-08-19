@@ -3,10 +3,16 @@ class Target < ISM::Software
     def prepare
         @buildDirectory = true
         super
+    end
+
+    def configure
+        super
 
         runMesonCommand(arguments:  "setup                                                          \
                                     --reconfigure                                                   \
                                     #{@buildDirectoryNames["MainBuild"]}                            \
+                                    --prefix=/usr                                                   \
+                                    --buildtype=release                                             \
                                     -Dlibaudit=no                                                   \
                                     -Dlibpsl=#{option("Libpsl") ? "true" : "false"}                 \
                                     -Dnmtui=#{option("Newt") ? "true" : "false"}                    \
@@ -18,34 +24,8 @@ class Target < ISM::Software
                                     -Dsystemdsystemunitdir=no                                       \
                                     -Dsystemd_journal=false                                         \
                                     -Dqt=false                                                      \
-                                    -Dpolkit=#{option("Polkit") ? "true" : "false"}                 \
-                                    -Dselinux=false                                                 \
-                                    -Dlibaudit=no",
-                        path:       mainWorkDirectoryPath)
-    end
-
-    def configure
-        super
-
-        runMesonCommand(arguments:      "configure                                                      \
-                                        #{@buildDirectoryNames["MainBuild"]}                            \
-                                        --prefix=/usr                                                   \
-                                        --buildtype=release                                             \
-                                        -Dlibaudit=no                                                   \
-                                        -Dlibpsl=#{option("Libpsl") ? "true" : "false"}                 \
-                                        -Dnmtui=#{option("Newt") ? "true" : "false"}                    \
-                                        -Dovs=false                                                     \
-                                        -Dppp=#{option("Ppp") ? "true" : "false"}                       \
-                                        -Dselinux=false                                                 \
-                                        -Dsession_tracking=elogind                                      \
-                                        -Dmodem_manager=#{option("ModemManager") ? "true" : "false"}    \
-                                        -Dsystemdsystemunitdir=no                                       \
-                                        -Dsystemd_journal=false                                         \
-                                        -Dqt=false                                                      \
-                                        -Dpolkit=#{option("Polkit") ? "true" : "false"}                 \
-                                        -Dselinux=false                                                 \
-                                        -Dlibaudit=no",
-                        path:           mainWorkDirectoryPath,
+                                    -Dpolkit=#{option("Polkit") ? "true" : "false"}",
+                        path:       mainWorkDirectoryPath,
                         environment:    {"CXXFLAGS" => "${CXXFLAGS} -O2 -fPIC"})
     end
 
