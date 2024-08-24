@@ -80,9 +80,10 @@ class Target < ISM::Software
     def install
         super
 
-        runChmodCommand("0755 /usr/sbin/wpa_cli")
-        runChmodCommand("0755 /usr/sbin/wpa_passphrase")
-        runChmodCommand("0755 /usr/sbin/wpa_supplicant}")
+        #NEED TO BE FIX
+        #runChmodCommand("0755 /usr/sbin/wpa_cli")
+        #runChmodCommand("0755 /usr/sbin/wpa_passphrase")
+        #runChmodCommand("0755 /usr/sbin/wpa_supplicant")
 
         if option("Dbus")
             runChmodCommand("0644 /usr/share/dbus-1/system-services")
