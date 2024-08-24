@@ -85,7 +85,7 @@ class Target < ISM::Software
         runChmodCommand("0755 /usr/sbin/wpa_supplicant")
 
         if option("Dbus")
-            runChmodCommand("0644 /usr/share/dbus-1/system-services")
+            runChmodCommand("0644 /usr/share/dbus-1/system-services/fi.w1.wpa_supplicant1.service")
             runChmodCommand("0755 /etc/dbus-1/system.d")
             runChmodCommand("0644 /etc/dbus-1/system.d/wpa_supplicant.conf")
         end
