@@ -12,12 +12,6 @@
       "name": "Dhcpcd",
       "version": ">=0.1.0",
       "options": []
-    },
-    {
-      "port": "SystemGroups-Main",
-      "name": "Dhcpcd",
-      "version": ">=0.1.0",
-      "options": []
     }
   ],
   "kernelDependencies": [],
