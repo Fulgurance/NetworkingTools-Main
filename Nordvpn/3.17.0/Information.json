@@ -8,7 +8,7 @@
   "installedFiles": [],
   "dependencies": [
     {
-      "port": "SystemBase-Groups",
+      "port": "SystemGroups-Main",
       "name": "Nordvpn",
       "version": ">=0.1.0",
       "options": []
