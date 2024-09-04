@@ -24,6 +24,7 @@ class Target < ISM::Software
                                     -Dsystemdsystemunitdir=no                                       \
                                     -Dsystemd_journal=false                                         \
                                     -Dqt=false                                                      \
+                                    -Ddnsmasq=/usr/sbin/dnsmasq                                     \
                                     -Dpolkit=#{option("Polkit") ? "true" : "false"}",
                         path:       mainWorkDirectoryPath,
                         environment:    {"CXXFLAGS" => "${CXXFLAGS} -O2 -fPIC"})
