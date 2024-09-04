@@ -65,7 +65,7 @@
     {
       "name": "Dhcpcd",
       "description": "Enable dhcpcd support",
-      "active": false,
+      "active": true,
       "dependencies": [
         {
           "port": "NetworkingTools-Main",
@@ -205,13 +205,13 @@
     {
       "name": "Wpa-Supplicant",
       "description": "Enable wpa-supplicant support",
-      "active": false,
+      "active": true,
       "dependencies": [
         {
           "port": "NetworkingTools-Main",
           "name": "Wpa-Supplicant",
           "version": ">=2.10.0",
-          "options": ["Dbus"]
+          "options": ["Dbus","Libxml2"]
         }
       ],
       "kernelDependencies": []
