@@ -13,6 +13,13 @@ class Target < ISM::Software
         makeSource( arguments:  "PREFIX=/usr DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath} install",
                     path:       buildDirectoryPath)
 
+        makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/conf.d")
+
+        dnsmasqData = <<-CODE
+        DNSMASQ_OPTS="--user=dnsmasq --group=dnsmasq"
+        CODE
+        fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/conf.d/dnsmasq",dnsmasqData)
+
         if option("Openrc")
             prepareOpenrcServiceInstallation(   path:   "#{workDirectoryPath}/Dnsmasq-Init.d",
                                                 name:   "dnsmasq")
