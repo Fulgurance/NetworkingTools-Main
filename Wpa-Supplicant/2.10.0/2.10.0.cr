@@ -35,6 +35,9 @@ class Target < ISM::Software
         CONFIG_SMARTCARD=y
         CONFIG_WPS=y
         CFLAGS += -I/usr/include/libnl3
+        CONFIG_CTRL_IFACE_DBUS=y
+        CONFIG_CTRL_IFACE_DBUS_NEW=y
+        CONFIG_CTRL_IFACE_DBUS_INTRO=y
         CODE
         fileWriteData("#{buildDirectoryPath}/.config",configData)
     end
@@ -73,7 +76,7 @@ class Target < ISM::Software
 
         if option("Openrc")
             prepareOpenrcServiceInstallation(   path:   "#{workDirectoryPath}/Wpa-Supplicant-Init.d",
-                                                name:   "wpa_supplicant")
+                                                name:   "wpa-supplicant")
         end
     end
 
