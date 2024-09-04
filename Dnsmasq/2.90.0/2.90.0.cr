@@ -19,4 +19,10 @@ class Target < ISM::Software
         end
     end
 
+    def showInformations
+        super
+
+        showInfo("After the installation, if you wish a user able to use Dnsmasq, add it in the dnsmasq system group")
+    end
+
 end
