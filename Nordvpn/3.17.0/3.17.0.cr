@@ -18,4 +18,10 @@ class Target < ISM::Software
         end
     end
 
+    def showInformations
+        super
+
+        showInfo("After the installation, if you wish a user able to use Nordvpn, add it in the nordvpn system group")
+    end
+
 end
