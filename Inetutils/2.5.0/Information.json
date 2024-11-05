@@ -1,10 +1,10 @@
 {
   "port": "NetworkingTools-Main",
-  "name": "Wireless-Tools",
-  "version": "29.0.0",
+  "name": "Inetutils",
+  "version": "2.5.0",
   "architectures": ["x86_64"],
-  "description": "Set of tools allowing to manipulate the Wireless Extensions",
-  "website": "https://hewlettpackard.github.io/wireless-tools",
+  "description": "Collection of common network programs",
+  "website": "https://www.gnu.org/software/inetutils/",
   "installedFiles": [],
   "dependencies": [
     {
@@ -12,14 +12,15 @@
       "name": "SystemBase",
       "version": ">=0.2.0",
       "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Readline",
+      "version": ">=8.2.0",
+      "options": []
     }
   ],
-  "kernelDependencies": [
-    "CONFIG_NET",
-    "CONFIG_WIRELESS",
-    "CONFIG_CFG80211",
-    "CONFIG_CFG80211_WEXT"
-  ],
+  "kernelDependencies": [],
   "options": [],
   "uniqueDependencies": [],
   "uniqueOptions": [],
