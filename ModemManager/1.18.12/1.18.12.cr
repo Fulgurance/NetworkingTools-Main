@@ -10,6 +10,7 @@ class Target < ISM::Software
                                     --disable-maintainer-mode                               \
                                     --with-systemd-journal=no                               \
                                     --with-systemd-suspend-resume                           \
+                                    --enable-introspection=#{option("Gobject-Introspection") ? "yes" : "no"}    \
                                     #{option("Libmbim") ? "--with-mbim" : "--without-mbim"} \
                                     #{option("Libqmi") ? "--with-qmi" : "--without-qmi"}",
                         path:       buildDirectoryPath)
