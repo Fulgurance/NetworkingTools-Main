@@ -13,7 +13,7 @@ class Target < ISM::Software
                                     #{@buildDirectoryNames["MainBuild"]}                                    \
                                     --prefix=/usr                                                           \
                                     --buildtype=release                                                     \
-                                    -Dtests=false                                                           \
+                                    -Dtests=no                                                              \
                                     -Dintrospection=#{option("Gobject-Introspection") ? "true" : "false"}   \
                                     -Dlibaudit=no                                                           \
                                     -Dlibpsl=#{option("Libpsl") ? "true" : "false"}                         \
