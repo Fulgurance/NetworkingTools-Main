@@ -8,24 +8,25 @@ class Target < ISM::Software
     def configure
         super
 
-        runMesonCommand(arguments:  "setup                                                          \
-                                    --reconfigure                                                   \
-                                    #{@buildDirectoryNames["MainBuild"]}                            \
-                                    --prefix=/usr                                                   \
-                                    --buildtype=release                                             \
-                                    -Dtests=false                                                   \
-                                    -Dlibaudit=no                                                   \
-                                    -Dlibpsl=#{option("Libpsl") ? "true" : "false"}                 \
-                                    -Dnmtui=#{option("Newt") ? "true" : "false"}                    \
-                                    -Dovs=false                                                     \
-                                    -Dppp=#{option("Ppp") ? "true" : "false"}                       \
-                                    -Dselinux=false                                                 \
-                                    -Dsession_tracking=elogind                                      \
-                                    -Dmodem_manager=#{option("ModemManager") ? "true" : "false"}    \
-                                    -Dsystemdsystemunitdir=no                                       \
-                                    -Dsystemd_journal=false                                         \
-                                    -Dqt=false                                                      \
-                                    -Ddnsmasq=/usr/sbin/dnsmasq                                     \
+        runMesonCommand(arguments:  "setup                                                                  \
+                                    --reconfigure                                                           \
+                                    #{@buildDirectoryNames["MainBuild"]}                                    \
+                                    --prefix=/usr                                                           \
+                                    --buildtype=release                                                     \
+                                    -Dtests=false                                                           \
+                                    -Dintrospection=#{option("Gobject-Introspection") ? "true" : "false"}   \
+                                    -Dlibaudit=no                                                           \
+                                    -Dlibpsl=#{option("Libpsl") ? "true" : "false"}                         \
+                                    -Dnmtui=#{option("Newt") ? "true" : "false"}                            \
+                                    -Dovs=false                                                             \
+                                    -Dppp=#{option("Ppp") ? "true" : "false"}                               \
+                                    -Dselinux=false                                                         \
+                                    -Dsession_tracking=elogind                                              \
+                                    -Dmodem_manager=#{option("ModemManager") ? "true" : "false"}            \
+                                    -Dsystemdsystemunitdir=no                                               \
+                                    -Dsystemd_journal=false                                                 \
+                                    -Dqt=false                                                              \
+                                    -Ddnsmasq=/usr/sbin/dnsmasq                                             \
                                     -Dpolkit=#{option("Polkit") ? "true" : "false"}",
                         path:       mainWorkDirectoryPath,
                         environment:    {"CXXFLAGS" => "${CXXFLAGS} -O2 -fPIC"})
