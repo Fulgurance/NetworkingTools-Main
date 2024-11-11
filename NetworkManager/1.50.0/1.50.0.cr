@@ -13,6 +13,7 @@ class Target < ISM::Software
                                     #{@buildDirectoryNames["MainBuild"]}                            \
                                     --prefix=/usr                                                   \
                                     --buildtype=release                                             \
+                                    -Dtests=false                                                   \
                                     -Dlibaudit=no                                                   \
                                     -Dlibpsl=#{option("Libpsl") ? "true" : "false"}                 \
                                     -Dnmtui=#{option("Newt") ? "true" : "false"}                    \
